@@ -1,0 +1,43 @@
+{
+  "navigation": {
+    "home": "Home",
+    "gallery": "Gallery",
+    "process": "Process",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Ahmet Büken",
+    "subtitle": "Master of Wooden Handicrafts & Phaetons",
+    "description": "Discover the timeless beauty of handcrafted wooden carriages, intricate ornaments, natural woodwork, and classical craftsmanship from Balıkesir.",
+    "cta": "Explore the Gallery"
+  },
+  "about": {
+    "title": "The Last Representative of Traditional Craft",
+    "description": "Based in the Havran district of Balıkesir and known as the 'Master of Horse Carriages and Phaetons,' Ahmet Büken is a living treasure of traditional Turkish handicrafts with half a century of experience. Resisting modern production techniques, the master works entirely with traditional methods. Each piece is completed with meticulous handcraftsmanship over an average of 6-8 months. These masterpieces keep nostalgia alive across the Edremit Gulf and tourism regions, while Master Ahmet takes pride in passing this fading art form on to new generations.",
+    "quote": "\"To touch wood is to speak with the heart of nature. Passing this art to new generations is my greatest goal.\"",
+    "stats": [
+      { "label": "Years of Experience", "value": "50+" },
+      { "label": "Months per Piece", "value": "6-8" }
+    ]
+  },
+  "gallery": {
+    "title": "Art Gallery",
+    "description": "A curated collection of handcrafted wooden masterpieces.",
+    "categories": {
+      "all": "All",
+      "carriages": "Carriages & Phaetons",
+      "sculptures": "Sculptures",
+      "kitchenware": "Natural Spoons",
+      "crafts": "Custom Creations"
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Interested in a custom piece or want to learn more about my work? I'd love to hear from you.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "locationValue": "Balıkesir, Turkey"
+  }
+}

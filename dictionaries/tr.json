@@ -1,0 +1,43 @@
+{
+  "navigation": {
+    "home": "Ana Sayfa",
+    "gallery": "Galeri",
+    "process": "Süreç",
+    "about": "Hakkımızda",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "title": "Ahmet Büken",
+    "subtitle": "Ahşap El Sanatları ve Fayton Ustası",
+    "description": "Balıkesir'den gelen zamansız ahşap faytonların, ince süslemelerin, heykel ve doğal el işçiliğinin sanatla buluştuğu noktayı keşfedin.",
+    "cta": "Galeriyi Keşfet"
+  },
+  "about": {
+    "title": "Geleneksel Zanaatın Son Temsilcisi",
+    "description": "Balıkesir'in Havran ilçesinde yaşayan ve 'Nam-ı diğer At Araba ve Fayton Ustası' olarak bilinen Ahmet Büken, yarım asırlık tecrübesiyle geleneksel Türk el sanatlarının yaşayan bir hazinesidir. Modern üretim tekniklerine karşı direnerek tamamen geleneksel yöntemlerle çalışan usta; her bir parçayı el emeği ve göz nuruyla, ortalama 6-8 aylık titiz bir süreçte tamamlıyor. Edremit Körfezi ve turizm bölgelerinde nostaljiyi yaşatan bu şaheserleri üreten Ahmet Usta, kaybolmaya yüz tutmuş bu sanatı yeni nesillere aktarmanın gururunu ve gayretini taşıyor.",
+    "quote": "\"Ahşaba dokunmak, doğanın kalbiyle konuşmaktır. Bu sanatı yeni nesillere aktarmak en büyük gayem.\"",
+    "stats": [
+      { "label": "Yıllık Deneyim", "value": "50+" },
+      { "label": "Bir Eserin Süreci (Ay)", "value": "6-8" }
+    ]
+  },
+  "gallery": {
+    "title": "Sanat Galerisi",
+    "description": "Özenle seçilmiş, el yapımı ahşap şaheserler koleksiyonu.",
+    "categories": {
+      "all": "Tümü",
+      "carriages": "Fayton ve At Arabası",
+      "sculptures": "Heykeller",
+      "kitchenware": "Doğal Ahşap Kaşıklar",
+      "crafts": "Özel Tasarımlar"
+    }
+  },
+  "contact": {
+    "title": "İletişime Geçin",
+    "description": "Özel bir eserle ilgileniyor veya çalışmalarım hakkında daha fazla bilgi almak mı istiyorsunuz? Sizinle iletişime geçmekten memnuniyet duyarım.",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "location": "Konum",
+    "locationValue": "Balıkesir, Türkiye"
+  }
+}
