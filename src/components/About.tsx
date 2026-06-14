@@ -21,7 +21,7 @@ export default function About({ dict }: { dict: Dictionary }) {
               {dict.about.description}
             </p>
             
-            <div className="grid grid-cols-2 gap-4 border-t border-stone-200 pt-8">
+            <div className="grid grid-cols-1 gap-4 border-t border-stone-200 pt-8 sm:grid-cols-3">
               {dict.about.stats.map((stat: { label: string, value: string }, index: number) => (
                 <div key={index} className="border-l border-[#b98950]/50 pl-5">
                   <div className="mb-2 text-4xl font-serif font-semibold text-[#8c5b2f]">{stat.value}</div>
@@ -39,10 +39,17 @@ export default function About({ dict }: { dict: Dictionary }) {
             className="w-full"
           >
             <div className="relative min-h-[520px] overflow-hidden bg-[#14110f] shadow-2xl">
-              <Image src="/images/customer_orders/IMG_20260502_112132.jpg" alt="Handcrafted woodwork detail" fill sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover object-center" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#211c17]/85 via-transparent to-transparent" />
+              <Image src="/images/portrait/ahmet-buken-workshop-portrait.png" alt="Ahmet Büken in his Havran workshop" fill sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover object-center" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#211c17]/90 via-[#211c17]/10 to-transparent" />
+              <div className="absolute left-6 top-6 border border-white/20 bg-[#211c17]/75 px-4 py-3 backdrop-blur-sm md:left-8 md:top-8">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#f0bd76]">{dict.about.sourceLabel}</p>
+                <a href={dict.about.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 block max-w-72 font-serif text-lg leading-tight text-stone-50 hover:text-[#f0bd76]">
+                  {dict.about.sourceTitle}
+                </a>
+                <p className="mt-2 text-xs text-stone-300">{dict.about.sourceDate}</p>
+              </div>
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <p className="max-w-md font-serif text-2xl italic leading-snug text-stone-50 md:text-3xl">
+                <p className="max-w-lg font-serif text-2xl italic leading-snug text-stone-50 md:text-3xl">
                   {dict.about.quote}
                 </p>
               </div>

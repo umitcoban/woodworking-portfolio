@@ -13,12 +13,17 @@
     "cta": "Galeriyi Keşfet"
   },
   "about": {
-    "title": "Geleneksel Zanaatın Son Temsilcisi",
-    "description": "Balıkesir'in Havran ilçesinde yaşayan ve 'Nam-ı diğer At Araba ve Fayton Ustası' olarak bilinen Ahmet Büken, yarım asırlık tecrübesiyle geleneksel Türk el sanatlarının yaşayan bir hazinesidir. Modern üretim tekniklerine karşı direnerek tamamen geleneksel yöntemlerle çalışan usta; her bir parçayı el emeği ve göz nuruyla, ortalama 6-8 aylık titiz bir süreçte tamamlıyor. Edremit Körfezi ve turizm bölgelerinde nostaljiyi yaşatan bu şaheserleri üreten Ahmet Usta, kaybolmaya yüz tutmuş bu sanatı yeni nesillere aktarmanın gururunu ve gayretini taşıyor.",
-    "quote": "\"Ahşaba dokunmak, doğanın kalbiyle konuşmaktır. Bu sanatı yeni nesillere aktarmak en büyük gayem.\"",
+    "title": "Kaybolan Zanaatın Yaşayan Ustası",
+    "description": "Balıkesir'in Havran ilçesinde at arabası ve fayton yapım sanatını yaşatan Ahmet Büken, yaklaşık 50 yıldır geleneksel yöntemlerle üretmeye devam ediyor. Motorlu taşıtlarla birlikte talebi azalan bu zanaatı bırakmadan sürdüren usta; el emeğiyle hazırladığı fayton ve at arabalarını Havran'ın yanı sıra Edremit Körfezi çevresindeki turizm bölgelerine de ulaştırıyor.",
+    "quote": "Her eser, ahşabın sabırla işlendiği 6-8 aylık bir emeğin ve nesilden nesile aktarılması gereken bir ustalığın izini taşır.",
+    "sourceLabel": "Yerel Basında",
+    "sourceTitle": "Havran'ın At Arabası ve Fayton Ustası Ahmet Büken",
+    "sourceDate": "Balıkesir Haber Ajansı, 16 Nisan 2026",
+    "sourceUrl": "https://www.balikesirhaberajansi.com/haber/2177/havran-in-at-arabasi-ve-fayton-ustasi-ahmet-buken.html",
     "stats": [
       { "label": "Yıllık Deneyim", "value": "50+" },
-      { "label": "Bir Eserin Süreci (Ay)", "value": "6-8" }
+      { "label": "Bir Eserin Süreci (Ay)", "value": "6-8" },
+      { "label": "Atölye", "value": "Havran" }
     ]
   },
   "gallery": {
