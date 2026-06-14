@@ -1,13 +1,10 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { defaultLocale, locales } from './src/lib/i18n'
 
-const locales = ['en', 'tr']
-const defaultLocale = 'tr'
-
-export default function proxy(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
   
-  // Check if there is any supported locale in the pathname
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   )
@@ -21,7 +18,6 @@ export default function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Skip all internal paths (_next)
-    '/((?!_next|images|favicon.ico).*)',
+    '/((?!_next|api|images|.*\\..*).*)',
   ],
 }

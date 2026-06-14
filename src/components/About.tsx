@@ -2,57 +2,49 @@
 
 import { Dictionary } from '@/src/lib/getDictionary'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function About({ dict }: { dict: Dictionary }) {
   return (
-    <section id="about" className="py-24 bg-stone-50 border-t border-stone-200">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-          {/* Text Content */}
+    <section id="about" className="border-t border-stone-200 bg-[#fffaf2] py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-5 md:px-10">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:w-1/2"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-6">{dict.about.title}</h2>
-            <div className="w-20 h-1 bg-amber-700 mb-8"></div>
-            <p className="text-stone-600 text-lg leading-relaxed mb-10">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-[#5f6f52]">{dict.navigation.about}</p>
+            <h2 className="mb-6 max-w-2xl text-4xl font-serif font-semibold leading-tight text-[#211c17] md:text-6xl">{dict.about.title}</h2>
+            <p className="mb-10 text-base leading-8 text-stone-700 md:text-lg">
               {dict.about.description}
             </p>
             
-            <div className="grid grid-cols-2 gap-8 border-t border-stone-200 pt-8">
+            <div className="grid grid-cols-2 gap-4 border-t border-stone-200 pt-8">
               {dict.about.stats.map((stat: { label: string, value: string }, index: number) => (
-                <div key={index}>
-                  <div className="text-4xl font-serif font-bold text-amber-700 mb-2">{stat.value}</div>
-                  <div className="text-sm font-medium text-stone-500 uppercase tracking-wider">{stat.label}</div>
+                <div key={index} className="border-l border-[#b98950]/50 pl-5">
+                  <div className="mb-2 text-4xl font-serif font-semibold text-[#8c5b2f]">{stat.value}</div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">{stat.label}</div>
                 </div>
               ))}
             </div>
           </motion.div>
           
-          {/* Image / Visual Element */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:w-1/2 w-full"
+            className="w-full"
           >
-            <div className="relative aspect-square md:aspect-[4/5] bg-stone-200 p-4 shadow-2xl">
-              <div className="absolute inset-4 border-2 border-amber-800/30 z-10 pointer-events-none"></div>
-              {/* Using CSS gradient to simulate a portrait vibe until an actual image is used */}
-              <div className="w-full h-full bg-stone-800 relative overflow-hidden group">
-                <div className="absolute inset-0 opacity-40 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] transition-transform duration-1000 group-hover:scale-110"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="text-6xl font-serif text-amber-600 mb-4 opacity-50">&quot;</div>
-                    <p className="text-stone-300 font-serif text-xl md:text-2xl italic max-w-sm">
-                      {dict.about.quote}
-                    </p>
-                  </div>
-                </div>
+            <div className="relative min-h-[520px] overflow-hidden bg-[#14110f] shadow-2xl">
+              <Image src="/images/customer_orders/IMG_20260502_112132.jpg" alt="Handcrafted woodwork detail" fill sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover object-center" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#211c17]/85 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <p className="max-w-md font-serif text-2xl italic leading-snug text-stone-50 md:text-3xl">
+                  {dict.about.quote}
+                </p>
               </div>
             </div>
           </motion.div>

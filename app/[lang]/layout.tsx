@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import '../globals.css'
-import { getDictionary, Locale } from '@/src/lib/getDictionary'
+import { getDictionary, hasLocale, locales } from '@/src/lib/getDictionary'
+import { notFound } from 'next/navigation'
 import Navbar from '@/src/components/Navbar'
 import Footer from '@/src/components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
-  const dict = await getDictionary(lang as Locale)
+  if (!hasLocale(lang)) notFound()
+
+  const dict = await getDictionary(lang)
 
   return {
     title: `${dict.hero.title} | ${dict.hero.subtitle}`,
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 }
 
 export async function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'tr' }]
+  return locales.map((lang) => ({ lang }))
 }
 
 export default async function RootLayout({
@@ -30,11 +30,13 @@ export default async function RootLayout({
   params: Promise<{ lang: string }>
 }) {
   const { lang } = await params
-  const dict = await getDictionary(lang as Locale)
+  if (!hasLocale(lang)) notFound()
+
+  const dict = await getDictionary(lang)
 
   return (
     <html lang={lang} className="scroll-smooth">
-      <body className={`relative ${inter.className} bg-stone-50 text-stone-900 antialiased selection:bg-stone-800 selection:text-stone-50`}>
+      <body className="relative bg-stone-50 text-stone-900 antialiased selection:bg-stone-800 selection:text-stone-50">
         <Navbar dict={dict} lang={lang} />
         <main>{children}</main>
         <Footer dict={dict} />

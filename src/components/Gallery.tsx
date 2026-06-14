@@ -5,40 +5,43 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Dictionary } from '@/src/lib/getDictionary'
 
-export default function Gallery({ dict }: { dict: Dictionary }) {
+const items = [
+  { id: 1, category: 'coach', title: { tr: 'Klasik fayton gövdesi', en: 'Classic phaeton body' }, image: '/images/coach/IMG_20260502_105654.jpg', span: 'md:col-span-2' },
+  { id: 2, category: 'coach', title: { tr: 'El yapımı at arabası detayı', en: 'Handmade carriage detail' }, image: '/images/coach/IMG_20260502_111749.jpg', span: '' },
+  { id: 3, category: 'statues', title: { tr: 'Ahşap figür çalışması', en: 'Wooden figure study' }, image: '/images/statues/IMG_20260502_110512.jpg', span: '' },
+  { id: 4, category: 'statues', title: { tr: 'Oyma heykel formu', en: 'Carved sculptural form' }, image: '/images/statues/IMG_20260502_111335.jpg', span: 'md:col-span-2' },
+  { id: 5, category: 'customerOrders', title: { tr: 'Özel sipariş obje', en: 'Bespoke wooden object' }, image: '/images/customer_orders/IMG_20260502_111932.jpg', span: '' },
+  { id: 6, category: 'customerOrders', title: { tr: 'Sipariş üzerine tasarım', en: 'Commissioned design' }, image: '/images/customer_orders/IMG_20260502_112306.jpg', span: '' },
+  { id: 7, category: 'coach', title: { tr: 'Geleneksel taşıt işçiliği', en: 'Traditional vehicle craft' }, image: '/images/coach/IMG_20260502_114005.jpg', span: '' },
+  { id: 8, category: 'statues', title: { tr: 'El oyma yüzey', en: 'Hand-carved surface' }, image: '/images/statues/IMG_20260502_113238.jpg', span: '' },
+  { id: 9, category: 'customerOrders', title: { tr: 'Kişiye özel ahşap iş', en: 'Personalized woodwork' }, image: '/images/customer_orders/IMG_20260502_112708.jpg', span: 'md:col-span-2' },
+]
+
+export default function Gallery({ dict }: { dict: Dictionary & { lang?: string } }) {
   const [filter, setFilter] = useState('all')
-  
-  // Dummy data for gallery
-  const items = [
-    { id: 1, category: 'carriages', title: 'Classic Phaeton', image: '/images/product_carriage.png' },
-    { id: 2, category: 'sculptures', title: 'Wooden Horse Sculpture', image: '/images/sculpture.png' },
-    { id: 3, category: 'kitchenware', title: 'Hand-carved Spoons', image: '/images/spoons.png' },
-    { id: 4, category: 'carriages', title: 'Miniature Carriage', image: '/images/product_carriage.png' },
-    { id: 5, category: 'crafts', title: 'Carved Ornament', image: '/images/sculpture.png' },
-    { id: 6, category: 'kitchenware', title: 'Rustic Kitchen Set', image: '/images/spoons.png' },
-  ]
 
   const filteredItems = filter === 'all' ? items : items.filter(item => item.category === filter)
 
   return (
-    <section id="gallery" className="py-24 bg-stone-100">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">{dict.gallery.title}</h2>
-          <p className="text-stone-600 max-w-2xl mx-auto">{dict.gallery.description}</p>
-          <div className="w-24 h-1 bg-amber-700 mx-auto mt-8"></div>
+    <section id="gallery" className="bg-[#f5efe5] py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-5 md:px-10">
+        <div className="mb-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-[#8c5b2f]">{dict.navigation.gallery}</p>
+            <h2 className="max-w-2xl text-4xl font-serif font-semibold leading-tight text-[#211c17] md:text-6xl">{dict.gallery.title}</h2>
+          </div>
+          <p className="max-w-2xl text-base leading-8 text-stone-700 md:text-lg">{dict.gallery.description}</p>
         </div>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="mb-10 flex gap-2 overflow-x-auto pb-2 md:flex-wrap">
           {Object.entries(dict.gallery.categories).map(([key, label]) => (
             <button
               key={key}
               onClick={() => setFilter(key)}
-              className={`px-6 py-2 text-sm uppercase tracking-wider font-medium transition-colors ${
+              className={`shrink-0 border px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] transition-colors ${
                 filter === key 
-                  ? 'bg-stone-900 text-stone-50' 
-                  : 'bg-transparent text-stone-600 border border-stone-300 hover:border-stone-900 hover:text-stone-900'
+                  ? 'border-[#211c17] bg-[#211c17] text-stone-50' 
+                  : 'border-stone-300 bg-white/35 text-stone-700 hover:border-[#8c5b2f] hover:text-[#5f3c20]'
               }`}
             >
               {label as string}
@@ -46,30 +49,30 @@ export default function Gallery({ dict }: { dict: Dictionary }) {
           ))}
         </div>
 
-        {/* Gallery Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div layout className="grid auto-rows-[280px] grid-cols-1 gap-4 md:grid-cols-3 md:auto-rows-[320px]">
           <AnimatePresence>
             {filteredItems.map((item, index) => (
               <motion.div
                 key={item.id}
                 layout
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative overflow-hidden aspect-[4/3] bg-stone-200 cursor-pointer shadow-md hover:shadow-xl transition-shadow"
+                transition={{ duration: 0.5, delay: index * 0.04 }}
+                className={`group relative overflow-hidden bg-[#14110f] shadow-sm ${item.span}`}
               >
                 <Image
                   src={item.image}
-                  alt={item.title}
+                  alt={item.title[dict.lang === 'en' ? 'en' : 'tr']}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-contain transition-transform duration-700 md:object-cover md:group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-stone-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <h3 className="text-stone-50 text-xl font-serif font-medium translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    {item.title}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <h3 className="translate-y-2 text-lg font-serif text-stone-50 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    {item.title[dict.lang === 'en' ? 'en' : 'tr']}
                   </h3>
                 </div>
               </motion.div>

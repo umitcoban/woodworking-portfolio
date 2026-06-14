@@ -22,22 +22,35 @@
     ]
   },
   "gallery": {
-    "title": "Sanat Galerisi",
-    "description": "Özenle seçilmiş, el yapımı ahşap şaheserler koleksiyonu.",
+    "title": "Eserler",
+    "description": "Faytonlardan heykellere, özel siparişlerden küçük objelere uzanan elde şekillendirilmiş ahşap işleri.",
     "categories": {
       "all": "Tümü",
-      "carriages": "Fayton ve At Arabası",
-      "sculptures": "Heykeller",
-      "kitchenware": "Doğal Ahşap Kaşıklar",
-      "crafts": "Özel Tasarımlar"
+      "coach": "Fayton ve At Arabası",
+      "statues": "Heykeller",
+      "customerOrders": "Özel Siparişler"
     }
+  },
+  "process": {
+    "eyebrow": "Atölyeden",
+    "title": "Yavaş işlenen, uzun yaşayan eserler",
+    "description": "Her çalışma malzemenin karakterini okumakla başlar; keski izi, oran, denge ve cila aynı sabırla tamamlanır.",
+    "steps": [
+      { "title": "Ağaç Seçimi", "desc": "Ceviz, meşe ve uygun damar yapısına sahip parçalar işin ölçeğine göre ayrılır." },
+      { "title": "Elde Şekillendirme", "desc": "Form, geleneksel ölçüler ve ustanın el hafızasıyla aşama aşama ortaya çıkar." },
+      { "title": "Son Katman", "desc": "Doğal yağlar, zımpara ve ince düzeltmelerle uzun ömürlü yüzey elde edilir." }
+    ]
   },
   "contact": {
     "title": "İletişime Geçin",
     "description": "Özel bir eserle ilgileniyor veya çalışmalarım hakkında daha fazla bilgi almak mı istiyorsunuz? Sizinle iletişime geçmekten memnuniyet duyarım.",
+    "infoTitle": "İletişim Bilgileri",
     "email": "E-posta",
     "phone": "Telefon",
     "location": "Konum",
-    "locationValue": "Balıkesir, Türkiye"
+    "locationValue": "Balıkesir, Türkiye",
+    "name": "İsim",
+    "message": "Mesaj",
+    "send": "Gönder"
   }
 }

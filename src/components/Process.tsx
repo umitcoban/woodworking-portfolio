@@ -4,80 +4,59 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Dictionary } from '@/src/lib/getDictionary'
 
-export default function Process({ dict }: { dict: Dictionary & { lang: string } }) {
-  const steps = [
-    {
-      title: dict.lang === 'en' ? 'Wood Selection' : 'Ağaç Seçimi',
-      desc: dict.lang === 'en' ? 'Choosing the finest walnut and oak.' : 'En iyi ceviz ve meşe ağaçlarının özenle seçimi.',
-    },
-    {
-      title: dict.lang === 'en' ? 'Hand Carving' : 'El İşçiliği',
-      desc: dict.lang === 'en' ? 'Shaping the wood using traditional techniques.' : 'Geleneksel yöntemlerle ahşaba şekil verme süreci.',
-    },
-    {
-      title: dict.lang === 'en' ? 'Final Polish' : 'Son Dokunuş',
-      desc: dict.lang === 'en' ? 'Applying natural oils for a timeless finish.' : 'Zamansız bir görünüm için doğal yağlarla cilalama.',
-    }
-  ]
-
+export default function Process({ dict }: { dict: Dictionary }) {
   return (
-    <section id="process" className="py-24 bg-stone-900 text-stone-50 overflow-hidden relative">
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <Image src="/images/process.png" alt="process background" fill sizes="100vw" className="object-cover object-center grayscale" />
+    <section id="process" className="relative overflow-hidden bg-[#201915] py-20 text-stone-50 md:py-28">
+      <div className="absolute inset-0 opacity-20">
+        <Image src="/images/coach/IMG_20260502_114537.jpg" alt="" fill sizes="100vw" className="object-cover object-center grayscale" />
       </div>
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-          <div className="lg:w-1/2">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#201915] via-[#201915]/95 to-[#3b281d]/90" />
+      <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-10">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#d6a15f]">{dict.process.eyebrow}</p>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-serif font-bold mb-6 text-amber-500"
+              className="mb-6 max-w-xl text-4xl font-serif font-semibold leading-tight text-stone-50 md:text-6xl"
             >
-              {dict.navigation.process}
+              {dict.process.title}
             </motion.h2>
-            <motion.div 
-              initial={{ width: 0 }}
-              whileInView={{ width: '5rem' }}
-              viewport={{ once: true }}
-              className="h-1 bg-amber-700 mb-8"
-            ></motion.div>
-            
-            <div className="space-y-12">
-              {steps.map((step, index) => (
+            <p className="mb-10 max-w-xl text-base leading-8 text-stone-300 md:text-lg">{dict.process.description}</p>
+
+            <div className="space-y-8">
+              {dict.process.steps.map((step, index) => (
                 <motion.div 
                   key={index}
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2 }}
-                  className="flex gap-6"
+                  className="grid grid-cols-[3.5rem_1fr] gap-4"
                 >
-                  <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 rounded-full border border-amber-600 flex items-center justify-center text-amber-500 font-serif text-xl">
+                  <div className="flex h-12 w-12 items-center justify-center border border-[#d6a15f]/60 font-serif text-xl text-[#d6a15f]">
                       {index + 1}
-                    </div>
-                    {index !== steps.length - 1 && <div className="w-px h-16 bg-stone-700 my-2"></div>}
                   </div>
-                  <div className="pt-2">
-                    <h3 className="text-2xl font-serif text-stone-200 mb-2">{step.title}</h3>
-                    <p className="text-stone-400">{step.desc}</p>
+                  <div>
+                    <h3 className="mb-2 text-2xl font-serif text-stone-100">{step.title}</h3>
+                    <p className="leading-7 text-stone-400">{step.desc}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
           </div>
           
-          <div className="lg:w-1/2 w-full">
+          <div>
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative aspect-[4/3] bg-stone-800 shadow-2xl overflow-hidden"
+              className="relative min-h-[420px] overflow-hidden bg-[#14110f] shadow-2xl md:min-h-[620px]"
             >
-              <Image src="/images/process.png" alt="Wood carving process" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent"></div>
+              <Image src="/images/statues/IMG_20260502_114100.jpg" alt="Wood carving process" fill sizes="(max-width: 1024px) 100vw, 55vw" className="object-cover object-center" />
+              <div className="absolute inset-0 border border-white/10" />
             </motion.div>
           </div>
         </div>

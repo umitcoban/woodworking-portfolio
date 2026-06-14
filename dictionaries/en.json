@@ -22,22 +22,35 @@
     ]
   },
   "gallery": {
-    "title": "Art Gallery",
-    "description": "A curated collection of handcrafted wooden masterpieces.",
+    "title": "Works",
+    "description": "Hand-shaped woodwork ranging from phaetons and sculptural figures to bespoke commissioned pieces.",
     "categories": {
       "all": "All",
-      "carriages": "Carriages & Phaetons",
-      "sculptures": "Sculptures",
-      "kitchenware": "Natural Spoons",
-      "crafts": "Custom Creations"
+      "coach": "Carriages & Phaetons",
+      "statues": "Sculptures",
+      "customerOrders": "Custom Orders"
     }
+  },
+  "process": {
+    "eyebrow": "From the Workshop",
+    "title": "Slowly crafted, built to endure",
+    "description": "Every work begins by reading the character of the material; tool marks, proportion, balance, and finish are handled with the same patience.",
+    "steps": [
+      { "title": "Wood Selection", "desc": "Walnut, oak, and pieces with the right grain are chosen according to the scale of the work." },
+      { "title": "Hand Shaping", "desc": "The form emerges gradually through traditional measurements and the master's hand memory." },
+      { "title": "Final Layer", "desc": "Natural oils, sanding, and fine adjustments create a durable surface." }
+    ]
   },
   "contact": {
     "title": "Get in Touch",
     "description": "Interested in a custom piece or want to learn more about my work? I'd love to hear from you.",
+    "infoTitle": "Contact Details",
     "email": "Email",
     "phone": "Phone",
     "location": "Location",
-    "locationValue": "Balıkesir, Turkey"
+    "locationValue": "Balıkesir, Turkey",
+    "name": "Name",
+    "message": "Message",
+    "send": "Send"
   }
 }
