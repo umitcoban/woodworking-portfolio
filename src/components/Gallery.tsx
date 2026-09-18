@@ -5,9 +5,11 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Dictionary } from '@/src/lib/getDictionary'
 import { GalleryItem } from '@/src/lib/getGalleryItems'
+import Lightbox from '@/src/components/Lightbox'
 
 export default function Gallery({ dict, items }: { dict: Dictionary & { lang?: string }; items: GalleryItem[] }) {
   const [filter, setFilter] = useState('all')
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   const filteredItems = useMemo(
     () => (filter === 'all' ? items : items.filter((item) => item.category === filter)),
@@ -15,6 +17,7 @@ export default function Gallery({ dict, items }: { dict: Dictionary & { lang?: s
   )
 
   const categories = dict.gallery.categories as Record<string, string>
+  const captionFor = (item: GalleryItem) => categories[item.category] ?? item.category
 
   return (
     <section id="gallery" className="bg-[#f5efe5] py-20 md:py-28">
@@ -31,7 +34,7 @@ export default function Gallery({ dict, items }: { dict: Dictionary & { lang?: s
           {Object.entries(categories).map(([key, label]) => (
             <button
               key={key}
-              onClick={() => setFilter(key)}
+              onClick={() => { setFilter(key); setActiveIndex(null) }}
               className={`shrink-0 border px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] transition-colors ${
                 filter === key
                   ? 'border-[#211c17] bg-[#211c17] text-stone-50'
@@ -57,11 +60,12 @@ export default function Gallery({ dict, items }: { dict: Dictionary & { lang?: s
                   viewport={{ once: true, margin: '100px' }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4, delay: Math.min(index, 8) * 0.04 }}
-                  className={`group relative overflow-hidden bg-[#14110f] shadow-sm ${index % 5 === 0 ? 'sm:col-span-2' : ''}`}
+                  className={`group relative cursor-pointer overflow-hidden bg-[#14110f] shadow-sm ${index % 5 === 0 ? 'sm:col-span-2' : ''}`}
+                  onClick={() => setActiveIndex(index)}
                 >
                   <Image
                     src={item.image}
-                    alt={categories[item.category] ?? item.category}
+                    alt={captionFor(item)}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     loading={index < 3 ? 'eager' : 'lazy'}
@@ -70,7 +74,7 @@ export default function Gallery({ dict, items }: { dict: Dictionary & { lang?: s
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <h3 className="translate-y-2 text-sm font-serif text-stone-50 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 md:text-lg">
-                      {categories[item.category] ?? item.category}
+                      {captionFor(item)}
                     </h3>
                   </div>
                 </motion.div>
@@ -79,6 +83,14 @@ export default function Gallery({ dict, items }: { dict: Dictionary & { lang?: s
           </motion.div>
         )}
       </div>
+
+      <Lightbox
+        items={filteredItems}
+        index={activeIndex}
+        caption={captionFor}
+        onClose={() => setActiveIndex(null)}
+        onNavigate={setActiveIndex}
+      />
     </section>
   )
 }

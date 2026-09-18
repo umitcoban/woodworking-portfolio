@@ -65,6 +65,9 @@
     "locationValue": "Balıkesir, Türkiye",
     "name": "İsim",
     "message": "Mesaj",
-    "send": "Gönder"
+    "send": "Gönder",
+    "sending": "Gönderiliyor...",
+    "success": "Mesajınız iletildi, teşekkürler!",
+    "errorMsg": "Bir sorun oluştu, lütfen tekrar deneyin veya telefonla ulaşın."
   }
 }
