@@ -49,11 +49,11 @@ export default function Hero({ dict }: { dict: Dictionary }) {
           className="w-full h-full relative"
         >
           <Image
-            src="/images/coach/IMG_20260502_105654.jpg"
+            src="/images/products/binek-fayton/IMG_20260502_105654.jpg"
             alt="Woodworking workshop"
             fill
             sizes="100vw"
-            priority
+            preload
             className="object-cover object-center md:object-[center_58%]"
           />
         </motion.div>

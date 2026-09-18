@@ -35,6 +35,7 @@ export default function Navbar({ dict, lang }: { dict: Dictionary, lang: string 
     { name: dict.navigation.gallery, href: `/${lang}#gallery` },
     { name: dict.navigation.process, href: `/${lang}#process` },
     { name: dict.navigation.about, href: `/${lang}#about` },
+    { name: dict.navigation.press, href: `/${lang}#press` },
     { name: dict.navigation.contact, href: `/${lang}#contact` },
   ]
 

@@ -8,7 +8,7 @@ export default function Process({ dict }: { dict: Dictionary }) {
   return (
     <section id="process" className="relative overflow-hidden bg-[#201915] py-20 text-stone-50 md:py-28">
       <div className="absolute inset-0 opacity-20">
-        <Image src="/images/coach/IMG_20260502_114537.jpg" alt="" fill sizes="100vw" className="object-cover object-center grayscale" />
+        <Image src="/images/products/binek-fayton/IMG_20260502_114537.jpg" alt="" fill sizes="100vw" loading="lazy" className="object-cover object-center grayscale" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-br from-[#201915] via-[#201915]/95 to-[#3b281d]/90" />
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-10">
@@ -55,7 +55,7 @@ export default function Process({ dict }: { dict: Dictionary }) {
               transition={{ duration: 0.6 }}
               className="relative min-h-[420px] overflow-hidden bg-[#14110f] shadow-2xl md:min-h-[620px]"
             >
-              <Image src="/images/statues/IMG_20260502_114100.jpg" alt="Wood carving process" fill sizes="(max-width: 1024px) 100vw, 55vw" className="object-cover object-center" />
+              <Image src="/images/products/oyma-at/IMG_20260502_111811.jpg" alt="Wood carving process" fill sizes="(max-width: 1024px) 100vw, 55vw" loading="lazy" className="object-cover object-center" />
               <div className="absolute inset-0 border border-white/10" />
             </motion.div>
           </div>

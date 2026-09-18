@@ -4,6 +4,7 @@
     "gallery": "Galeri",
     "process": "Süreç",
     "about": "Hakkımızda",
+    "press": "Basında",
     "contact": "İletişim"
   },
   "hero": {
@@ -31,9 +32,12 @@
     "description": "Faytonlardan heykellere, özel siparişlerden küçük objelere uzanan elde şekillendirilmiş ahşap işleri.",
     "categories": {
       "all": "Tümü",
-      "coach": "Fayton ve At Arabası",
-      "statues": "Heykeller",
-      "customerOrders": "Özel Siparişler"
+      "binek-at-arabasi": "Binek At Arabası",
+      "binek-fayton": "Binek Fayton",
+      "minyatur-at-arabasi": "Minyatür At Arabası",
+      "minyatur-fayton": "Minyatür Fayton",
+      "oyma-at": "Oyma At",
+      "diger": "Diğer"
     }
   },
   "process": {
@@ -45,6 +49,11 @@
       { "title": "Elde Şekillendirme", "desc": "Form, geleneksel ölçüler ve ustanın el hafızasıyla aşama aşama ortaya çıkar." },
       { "title": "Son Katman", "desc": "Doğal yağlar, zımpara ve ince düzeltmelerle uzun ömürlü yüzey elde edilir." }
     ]
+  },
+  "press": {
+    "eyebrow": "Basında",
+    "title": "Ahmet Büken basında",
+    "description": "Yıllar içinde televizyon programları ve haber kuruluşlarında yer alan röportaj ve haberler."
   },
   "contact": {
     "title": "İletişime Geçin",

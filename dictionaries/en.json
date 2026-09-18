@@ -4,6 +4,7 @@
     "gallery": "Gallery",
     "process": "Process",
     "about": "About",
+    "press": "Press",
     "contact": "Contact"
   },
   "hero": {
@@ -31,9 +32,12 @@
     "description": "Hand-shaped woodwork ranging from phaetons and sculptural figures to bespoke commissioned pieces.",
     "categories": {
       "all": "All",
-      "coach": "Carriages & Phaetons",
-      "statues": "Sculptures",
-      "customerOrders": "Custom Orders"
+      "binek-at-arabasi": "Riding Horse Carriages",
+      "binek-fayton": "Riding Phaetons",
+      "minyatur-at-arabasi": "Miniature Horse Carriages",
+      "minyatur-fayton": "Miniature Phaetons",
+      "oyma-at": "Carved Horses",
+      "diger": "Other Works"
     }
   },
   "process": {
@@ -45,6 +49,11 @@
       { "title": "Hand Shaping", "desc": "The form emerges gradually through traditional measurements and the master's hand memory." },
       { "title": "Final Layer", "desc": "Natural oils, sanding, and fine adjustments create a durable surface." }
     ]
+  },
+  "press": {
+    "eyebrow": "In the Press",
+    "title": "Ahmet Büken in the media",
+    "description": "Television features and news coverage of the craft over the years."
   },
   "contact": {
     "title": "Get in Touch",
